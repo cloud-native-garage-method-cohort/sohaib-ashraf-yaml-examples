@@ -1,17 +1,18 @@
+---
 apiVersion: tekton.dev/v1beta1
 kind: Pipeline
 metadata:
   name: markdown-lint
 spec:
   workspaces:
-    - name git-source
+    - name: git-source
   tasks:
     - name: clone-repo
       taskRef:
         name: git-clone
       workspaces:
         - name: output
-          workspace; git-source
+          workspace: git-source
       params:
         - name: url
           value: https://github.com/upslopeio/lint-markdown-files.git
