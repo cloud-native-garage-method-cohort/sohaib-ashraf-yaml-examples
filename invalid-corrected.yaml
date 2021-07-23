@@ -24,6 +24,6 @@ spec:
       workspaces:
         - name: shared-workspace
           workspace: git-source
-      params: 
+      params:
         - name: args
           value: ["."]
